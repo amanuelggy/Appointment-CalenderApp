@@ -5,6 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.amanuel.appointment.services.UserService;
 
@@ -23,7 +24,12 @@ public class User {
 		return "index";
 	}
 	@RequestMapping("/book")
-	public String booking(Model model) {
+	public String booking(@ModelAttribute("book") User book,@RequestParam(value = "username", required = false) String username, Model model) {
+		//System.out.println("firstname: ");
+		System.out.println("username: " + username);
+		userservice.saveUser(book);;
+		String str = book.toString();
+		System.out.println("User: " + str);
 		return "bookingPage";
 	}
 	@PostMapping("/bookme")

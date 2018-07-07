@@ -17,7 +17,7 @@
 	</div>
 	<div class = "slideshow_container">
 		<div class = "monthWeeks">
-			<form action = "/book" method = "POST">
+			<form action = "/book" method = "POST" modelAttribute = "book">
 				<div class = "weeks">
 					<table>
 						<tr>
@@ -30,10 +30,10 @@
 							<th>Sun</th>
 						</tr>
 						<tr>
-							<td><a href = "/book">8:00 AM</a></td>
-							<td>8:00 AM</td>
-							<td>8:00 AM</td>
-							<td>8:00 AM</td>
+							<td><button name = "username" formaction = "/book" value = "7:00 AM Monday">7:00 AM</button></td>
+							<td><button name = "username" formaction = "/book" value = "8:00 AM Monday">8:00 AM</button></td>
+							<td><button name = "username" formaction = "/book" value = "9:00 AM Monday"> 9:00 AM</button></td>
+							<td>10:00 AM</td>
 							<td>8:00 AM</td>
 							<td>8:00 AM</td>
 							<td>8:00 AM</td>
