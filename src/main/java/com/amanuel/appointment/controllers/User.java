@@ -24,24 +24,29 @@ public class User {
 		return "index";
 	}
 	@RequestMapping("/book")
-	public String booking(@ModelAttribute("book") User book,@RequestParam(value = "username", required = false) String username, Model model) {
+	public String booking(@ModelAttribute("book") User book,@RequestParam(value = "username", required = false ) String username, Model model) {
 		//System.out.println("firstname: ");
 		System.out.println("username: " + username);
-		userservice.saveUser(book);;
-		String str = book.toString();
-		System.out.println("User: " + str);
+		userservice.saveUser(username);
+		model.addAttribute("user", username);
+		System.out.println("User: " + userservice.allusers());
 		return "bookingPage";
 	}
 	@PostMapping("/bookme")
 	public String bookme(@ModelAttribute("user") User user, Model model) {
 		System.out.println("firstname: ");
-		userservice.saveUser(user);
-		String str = user.toString();
+		userservice.saveUserInfo(user);
+		
+		String str = String.valueOf(user);
 		System.out.println("User: " + str);
+		// change the form to <form:form> format !!!!!!!!!!!!!!!!
 		return "redirect:/confirm";
 	}
 	@RequestMapping("/confirm")
 	public String confirmation(Model model) {
+		model.addAttribute("userInfo", userservice.alluserInfo());
+		String str = String.valueOf(userservice.alluserInfo());
+		System.out.println("user email will be: " + str);
 		return "confirmBookingPage";
 	}
 }

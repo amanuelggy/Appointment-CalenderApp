@@ -10,15 +10,23 @@ import com.amanuel.appointment.controllers.User;
 
 @Service
 public class UserService {
-	List<User> users = new ArrayList<User>();
+	List<String> users = new ArrayList<String>();
 //			Arrays.asList(
 //					new User("Amanuel", "Gebrelibanos","amanual2@gmail.com","Inperson","academic"),
 //					new User("Thomas", "Gebrelibanos", "thomas@gmail.com", "Phone", "Leadership")
 //			));
-	public List<User> allusers(){
+	List<User> userInfo = new ArrayList<User>();
+	public List<String> allusers(){
 		return users;
 	}
-	public void saveUser(User user) {
+	public void saveUser(String user) {
 		users.add(user);
+	}
+	public void saveUserInfo(User user) {
+		userInfo.add(user);
+		
+	}
+	public List<User> alluserInfo(){
+		return userInfo;
 	}
 }

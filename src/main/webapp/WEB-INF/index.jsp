@@ -15,6 +15,7 @@
 	<div class = "headers">
 		<label class = "info">Please sign up for a time and we will reach out to you by phone</label>
 	</div>
+	
 	<div class = "slideshow_container">
 		<div class = "monthWeeks">
 			<form action = "/book" method = "POST" modelAttribute = "book">
@@ -30,9 +31,9 @@
 							<th>Sun</th>
 						</tr>
 						<tr>
-							<td><button name = "username" formaction = "/book" value = "7:00 AM Monday">7:00 AM</button></td>
-							<td><button name = "username" formaction = "/book" value = "8:00 AM Monday">8:00 AM</button></td>
-							<td><button name = "username" formaction = "/book" value = "9:00 AM Monday"> 9:00 AM</button></td>
+							<td><button name = "username" formaction = "/book" value = "7:00 AM Monday, July 16, 2018">7:00 AM</button></td>
+							<td><button name = "username" formaction = "/book" value = "8:00 AM Monday, July 23, 2018">8:00 AM</button></td>
+							<td><button name = "username" formaction = "/book" value = "9:00 AM Monday, July 30, 2018"> 9:00 AM</button></td>
 							<td>10:00 AM</td>
 							<td>8:00 AM</td>
 							<td>8:00 AM</td>
